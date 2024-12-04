@@ -28,6 +28,8 @@ public class Transaction {
             System.out.println("This book was not borrowed by the member.");
         }
     }
+    
+    public static void displayTransactionHistory() {}
 
     // Get the current date and time in a readable format
     private static String getCurrentDateTime() {
