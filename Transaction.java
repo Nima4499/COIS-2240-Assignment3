@@ -15,7 +15,18 @@ public class Transaction {
 	        }
 	        return instance;
 	    }
-	 public void displayTransactionHistory() {}
+	 public void displayTransactionHistory() {
+		    try (BufferedReader reader = new BufferedReader(new FileReader("transactions.txt"))) {
+		        String line;
+		        System.out.println("Transaction History:");
+		        while ((line = reader.readLine()) != null) {
+		            System.out.println(line);
+		        }
+		    } catch (IOException e) {
+		        System.out.println("Error Not able to read transactions file " + e.getMessage());
+		    }
+		}
+
     // Perform the borrowing of a book
     public boolean borrowBook(Book book, Member member) {
         if (book.isAvailable()) {
