@@ -6,8 +6,15 @@ public class Library {
     private List<Book> books = new ArrayList<Book>();
 
     // Add a new member to the library
-    public void addMember(Member member) {
+    public boolean addMember(Member member) {
+    	
+    	if (findMembersById(member.getId()) != null) {
+    		System.out.println("Error ID" + member.getId() + " already exists. ");
+    		return false;
+    		
+    	}
         members.add(member);
+        return true;
     }
     
     // Add a new book to the library
