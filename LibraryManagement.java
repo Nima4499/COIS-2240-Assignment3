@@ -78,6 +78,7 @@ public class LibraryManagement {
 
                     if (member != null && book != null) {
                     	Transaction.borrowBook(book, member);
+                    	
                     } else {
                         System.out.println("Invalid member or book ID.");
                     }
@@ -119,6 +120,8 @@ public class LibraryManagement {
                 case 6:
                 	Transaction.displayTransactionHistory();
                     break;
+                    default:
+                    	System.out.println("Invalid! try again." );
                 case 7:
                     System.out.println("Exiting. Good Bye..");
                     running = false;
