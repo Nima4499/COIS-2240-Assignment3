@@ -39,7 +39,15 @@ public class Transaction {
             System.out.println("This book was not borrowed by the member.");
         }
     }
-    
+    public void saveTransaction(String transactionDetails) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("transactions.txt", true))) {
+            writer.write(transactionDetails);
+            writer.newLine();
+        } catch (IOException e) {
+            e.printStackTrace(); // Minimal exception handling to print stack trace
+        }
+    }
+
     public void displayTransactionHistory() {}
 
     // Get the current date and time in a readable format
