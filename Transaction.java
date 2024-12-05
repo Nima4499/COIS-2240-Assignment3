@@ -2,6 +2,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Transaction {
+	private static Transaction instance;
+	
 
     // Perform the borrowing of a book
     public static boolean borrowBook(Book book, Member member) {
