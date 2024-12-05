@@ -9,7 +9,7 @@ public class Library {
     public boolean addMember(Member member) {
     	
     	if (findMembersById(member.getId()) != null) {
-    		System.out.println("Error ID" + member.getId() + " already exists. ");
+    		System.out.println("Error member ID" + member.getId() + " already exists. ");
     		return false;
     		
     	}
@@ -19,7 +19,13 @@ public class Library {
     
     // Add a new book to the library
     public void addBook(Book book) {
+    	if (findBookById(book.getId()) != null) { 
+            System.out.println("Error book ID " + book.getId() + " already exists.");
+            return false; 
+    	}
+            
         books.add(book);
+        return true;
     }
 
     // Find a member by ID
