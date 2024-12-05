@@ -3,7 +3,7 @@ import java.util.Date;
 
 public class Transaction {
 	private static Transaction instance;
-	
+	private Transaction() {}
 
     // Perform the borrowing of a book
     public static boolean borrowBook(Book book, Member member) {
