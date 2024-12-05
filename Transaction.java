@@ -15,7 +15,7 @@ public class Transaction {
 	        }
 	        return instance;
 	    }
-
+	 public void displayTransactionHistory() {}
     // Perform the borrowing of a book
     public boolean borrowBook(Book book, Member member) {
         if (book.isAvailable()) {
