@@ -63,7 +63,7 @@ public class Transaction {
         }
     }
 
-    public void displayTransactionHistory() {}
+    
 
     // Get the current date and time in a readable format
     private String getCurrentDateTime() {
