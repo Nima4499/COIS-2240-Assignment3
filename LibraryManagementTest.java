@@ -41,3 +41,28 @@ public class LibraryManagementTest {
       assertThrows(Exception.class, () -> new Book(99, "Error small number detected! pick from 100 - 999"));
       assertThrows (Exception.class, () -> new Book(1000, "Error large number detected! pick from 100 - 999"));
     }
+
+
+@Test
+    public void testBorrowReturn() {
+        
+        assertTrue(book1.isAvailable());
+        assertTrue(book2.isAvailable());
+
+        
+        boolean borrowResult = transaction.borrowBook(book1, member1);
+        assertTrue(borrowResult); 
+        assertFalse(book1.isAvailable()); 
+
+        
+        borrowResult = transaction.borrowBook(book1, member1);
+        assertFalse(borrowResult); 
+
+        
+        boolean returnResult = transaction.returnBook(book1, member1);
+        assertTrue(returnResult);
+        assertTrue(book1.isAvailable()); 
+
+                returnResult = transaction.returnBook(book1, member1);
+        assertFalse(returnResult); 
+    }
