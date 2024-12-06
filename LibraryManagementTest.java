@@ -27,3 +27,17 @@ public class LibraryManagementTest {
         member1 = new Member(1, "Anna Green");
         transaction = Transaction.getTransaction();
     }
+
+@Test
+    public void testBookId() throws Exception{
+        Book book1 = new Book (100, " valid ID");
+        Book book2 = new Book (999, " valid ID");
+
+        
+        assertTrue(book1.isValidId(100));
+        assertTrue(book2.isValidId(999));
+
+        
+      assertThrows(Exception.class, () -> new Book(99, "Error small number detected! pick from 100 - 999"));
+      assertThrows (Exception.class, () -> new Book(1000, "Error large number detected! pick from 100 - 999"));
+    }
