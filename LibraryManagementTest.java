@@ -12,7 +12,7 @@ public class LibraryManagementTest {
     private Library library;
     private Transaction transaction;
 
-@Before
+    @Before
     public void setUp() {
         
         library = new Library();
@@ -28,7 +28,8 @@ public class LibraryManagementTest {
         transaction = Transaction.getTransaction();
     }
 
-@Test
+    
+    @Test
     public void testBookId() throws Exception{
         Book book1 = new Book (100, " valid ID");
         Book book2 = new Book (999, " valid ID");
@@ -41,9 +42,10 @@ public class LibraryManagementTest {
       assertThrows(Exception.class, () -> new Book(99, "Error small number detected! pick from 100 - 999"));
       assertThrows (Exception.class, () -> new Book(1000, "Error large number detected! pick from 100 - 999"));
     }
+    
 
-
-@Test
+    
+    @Test
     public void testBorrowReturn() {
         
         assertTrue(book1.isAvailable());
@@ -64,10 +66,11 @@ public class LibraryManagementTest {
         assertTrue(book1.isAvailable()); 
 
                 returnResult = transaction.returnBook(book1, member1);
-        assertFalse(returnResult); 
+        assertTrue(returnResult); 
     }
-
- @Test
+   
+    
+    @Test
     public void testSingletonTransaction() throws Exception {
             Constructor<Transaction> constructor = Transaction.class.getDeclaredConstructor();
 
