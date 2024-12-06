@@ -1,5 +1,6 @@
 import java.util.Scanner;
 
+
 public class LibraryManagement {
     private Library library = new Library();
     private Transaction transaction = Transaction.getTransaction();
@@ -77,7 +78,7 @@ public class LibraryManagement {
                     Book book = library.findBookById(bookId);
 
                     if (member != null && book != null) {
-                    	Transaction.borrowBook(book, member);
+                    	transaction.borrowBook(book, member);
                     	
                     } else {
                         System.out.println("Invalid member or book ID.");
@@ -96,7 +97,7 @@ public class LibraryManagement {
                     book = library.findBookById(bookId);
 
                     if (member != null && book != null) {
-                    	Transaction.returnBook(book, member);
+                    	transaction.returnBook(book, member);
                     } else {
                         System.out.println("Invalid member or book ID.");
                     }
@@ -118,16 +119,16 @@ public class LibraryManagement {
                     }
                     break;
                 case 6:
-                	Transaction.displayTransactionHistory();
+                	transaction.displayTransactionHistory();
                     break;
-                    default:
-                    	System.out.println("Invalid! try again." );
+                    
                 case 7:
                     System.out.println("Exiting. Good Bye..");
                     running = false;
                     break;
                 default:
                     System.out.println("Invalid choice! Please try again.");
+                    break;
             }
         }
     }
