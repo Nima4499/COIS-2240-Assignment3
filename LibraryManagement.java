@@ -5,11 +5,11 @@ public class LibraryManagement {
     private Library library = new Library();
     private Transaction transaction = Transaction.getTransaction();
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         new LibraryManagement().run();
     }
 
-    private void run() {
+    private void run() throws Exception {
         Scanner scanner = new Scanner(System.in);
         boolean running = true;
 
