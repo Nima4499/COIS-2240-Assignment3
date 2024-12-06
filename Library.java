@@ -18,7 +18,7 @@ public class Library {
     }
     
     // Add a new book to the library
-    public void addBook(Book book) {
+    public boolean addBook(Book book) {
     	if (findBookById(book.getId()) != null) { 
             System.out.println("Error book ID " + book.getId() + " already exists.");
             return false; 
