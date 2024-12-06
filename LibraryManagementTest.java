@@ -66,3 +66,13 @@ public class LibraryManagementTest {
                 returnResult = transaction.returnBook(book1, member1);
         assertFalse(returnResult); 
     }
+
+ @Test
+    public void testSingletonTransaction() throws Exception {
+            Constructor<Transaction> constructor = Transaction.class.getDeclaredConstructor();
+
+            int modifiers = constructor.getModifiers(); 
+            assertTrue(Modifier.isPrivate(modifiers)); 
+
+    }
+    }
