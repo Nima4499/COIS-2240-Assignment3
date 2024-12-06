@@ -8,7 +8,7 @@ public class Library {
     // Add a new member to the library
     public boolean addMember(Member member) {
     	
-    	if (findMembersById(member.getId()) != null) {
+    	if (findMemberById(member.getId()) != null) {
     		System.out.println("Error member ID" + member.getId() + " already exists. ");
     		return false;
     		
